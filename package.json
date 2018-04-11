@@ -1,0 +1,18 @@
+{
+  "name": "foosball-chain-ui",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Tomasz Cichowicz",
+  "license": "MIT",
+  "scripts": {
+    "serve": "http-server -p 8000"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.12.9"
+  },
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}

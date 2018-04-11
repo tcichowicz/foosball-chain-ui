@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    <title>Foosball Chain</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row my-3">
+            <div class="col-8 pl-0">
+                <h1 class="display-4">⚽ Foosball Chain</h1>
+            </div>
+            <div class="col-4 text-right">
+                <div class="btn-group" role="group" aria-label="Main controls">
+                    <button type="button" class="btn btn-secondary" onclick="refresh()">Refresh ⟳</button>
+                    <button type="button" class="btn btn-primary" onclick="register()">Register</button>
+                    <button type="button" class="btn btn-success" data-toggle="collapse" data-target="#addMatch" aria-expanded="false" aria-controls="addMatch">Add match ▼</button>
+                </div>
+                <p>
+                    <strong>Balance:</strong>&nbsp;
+                    <span id="balance"></span>&nbsp;FOO
+                </p>
+            </div>
+            <div id="addMatch" class="collapse col-12 mb-3">
+                <div class="card card-body">
+                    <form id="addMatchForm">
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control" name="teamA" placeholder="Team A" required>
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" name="teamB" placeholder="Team B" required>
+                            </div>
+                            <div class="col">
+                                <button type="submit" class="btn btn-success">Add match</button>
+                                <button type="button" class="close float-right" data-toggle="collapse" data-target="#addMatch" aria-expanded="false" aria-controls="addMatch">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div id="matchList" class="col-12"></div>
+        </div>
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="abis.js"></script>
+    <script src="integration.js"></script>
+    <script src="main.js"></script>
+    <script type="text/javascript">
+        handleFormSubmit('addMatchForm', addMatch);
+
+        init().then(refresh);
+    </script>
+</body>
+
+</html>
